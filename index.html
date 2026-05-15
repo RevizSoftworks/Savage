@@ -1,0 +1,247 @@
+{\rtf1\ansi\ansicpg1252\cocoartf2761
+\cocoatextscaling0\cocoaplatform0{\fonttbl\f0\fnil\fcharset0 HelveticaNeue;}
+{\colortbl;\red255\green255\blue255;}
+{\*\expandedcolortbl;;}
+\margl1440\margr1440\vieww11520\viewh8400\viewkind0
+\deftab560
+\pard\pardeftab560\slleading20\partightenfactor0
+
+\f0\fs26 \cf0 <!DOCTYPE html>\
+<html lang="en">\
+<head>\
+    <meta charset="UTF-8">\
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">\
+    <title>Reviz | Relax while we write</title>\
+    <script src="https://cdn.tailwindcss.com"></script>\
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">\
+    <style>\
+        body \{\
+            font-family: 'Inter', sans-serif;\
+            background-color: #fcfcfc;\
+            color: #1a1a1a;\
+        \}\
+        .glass-card \{\
+            background: rgba(255, 255, 255, 0.8);\
+            backdrop-filter: blur(10px);\
+            border: 1px solid rgba(0, 0, 0, 0.05);\
+        \}\
+        .soft-shadow \{\
+            box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.04);\
+        \}\
+        #video-container \{\
+            position: absolute;\
+            width: 1px; height: 1px;\
+            overflow: hidden; opacity: 0;\
+        \}\
+        .page-view \{\
+            display: none;\
+        \}\
+        .active-view \{\
+            display: block;\
+        \}\
+        #announcement-modal \{\
+            display: flex;\
+        \}\
+    </style>\
+</head>\
+<body class="antialiased selection:bg-gray-200">\
+\
+    <div id="video-container">\
+        <div id="player"></div>\
+    </div>\
+\
+    <!-- Announcement Popup -->\
+    <div id="announcement-modal" class="fixed inset-0 z-[100] items-center justify-center bg-black/20 backdrop-blur-sm">\
+        <div class="glass-card p-8 rounded-3xl soft-shadow max-w-sm w-full mx-4 text-center">\
+            <h3 class="text-xl font-medium mb-2">Announcement</h3>\
+            <p class="text-gray-500 text-sm mb-6">Reviz is currently in development. We are launching very soon!</p>\
+            <button onclick="closeAnnouncement()" class="w-full py-3 bg-black text-white rounded-xl font-medium hover:bg-gray-800 transition-colors">\
+                Okay!\
+            </button>\
+        </div>\
+    </div>\
+\
+    <!-- Navigation -->\
+    <nav class="fixed top-0 left-0 right-0 z-50 bg-white/80 backdrop-blur-md border-b border-gray-100">\
+        <div class="flex items-center justify-between px-8 py-6 max-w-7xl mx-auto">\
+            <button onclick="showPage('home')" class="text-xl font-medium tracking-tight">Reviz</button>\
+            <div class="space-x-8 text-sm text-gray-500 flex items-center">\
+                <button onclick="showPage('home')" class="hover:text-black transition-colors">Services</button>\
+                <button onclick="showPage('contact')" class="text-black font-medium">Contact</button>\
+            </div>\
+        </div>\
+    </nav>\
+\
+    <main class="max-w-7xl mx-auto px-8 pt-32">\
+        \
+        <!-- Home & Services View -->\
+        <div id="home" class="page-view active-view">\
+            <div class="max-w-3xl mb-24">\
+                <h1 class="text-5xl md:text-6xl font-normal leading-[1.1] mb-8 tracking-tight">\
+                    Your assignments handled. <br>\
+                    <span class="text-gray-400">Your stress vanished.</span>\
+                </h1>\
+                <p class="text-lg text-gray-500 leading-relaxed mb-6 max-w-xl">\
+                    We do your English, History, and essays for you. We make sure you get a good grade while you chill. <span class="text-black font-semibold italic">Note: We do not do Algebra.</span>\
+                </p>\
+            </div>\
+\
+            <div class="grid md:grid-cols-3 gap-8 pb-32">\
+                <div class="glass-card p-8 rounded-2xl soft-shadow">\
+                    <div class="w-10 h-10 bg-gray-100 rounded-lg mb-6 flex items-center justify-center text-gray-600">\
+                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M15.232 5.232l3.536 3.536m-2.036-5.036a2.5 2.5 0 113.536 3.536L6.5 21.036H3v-3.572L16.732 3.732z" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>\
+                    </div>\
+                    <h3 class="text-lg font-medium mb-3">Expert Writing</h3>\
+                    <p class="text-gray-500 text-sm leading-relaxed">\
+                        We are pros at English and History. Every essay is written perfectly so you get a high grade.\
+                    </p>\
+                </div>\
+\
+                <div class="glass-card p-8 rounded-2xl soft-shadow">\
+                    <div class="w-10 h-10 bg-gray-100 rounded-lg mb-6 flex items-center justify-center text-gray-600">\
+                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>\
+                    </div>\
+                    <h3 class="text-lg font-medium mb-3">Our Method</h3>\
+                    <p class="text-gray-500 text-sm leading-relaxed">\
+                        We don't just give you the work. We explain what the assignment is about so you actually understand the topic.\
+                    </p>\
+                </div>\
+\
+                <div class="glass-card p-8 rounded-2xl soft-shadow">\
+                    <div class="w-10 h-10 bg-gray-100 rounded-lg mb-6 flex items-center justify-center text-gray-600">\
+                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M14.828 14.828a4 4 0 01-5.656 0M9 10h.01M15 10h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>\
+                    </div>\
+                    <h3 class="text-lg font-medium mb-3">No More Stress</h3>\
+                    <p class="text-gray-500 text-sm leading-relaxed">\
+                        Stop worrying about deadlines. We handle the hard work so you can focus on yourself.\
+                    </p>\
+                </div>\
+            </div>\
+        </div>\
+\
+        <!-- Contact View -->\
+        <div id="contact" class="page-view pb-32">\
+            <div class="max-w-2xl mx-auto glass-card p-10 rounded-2xl soft-shadow">\
+                <div id="form-status" class="hidden mb-6 p-4 bg-green-50 text-green-700 rounded-xl text-center text-sm font-medium">\
+                    Message sent successfully!\
+                </div>\
+                \
+                <form id="reviz-form" action="https://formspree.io/f/xzdolvaz" method="POST" class="space-y-6">\
+                    <div class="grid grid-cols-2 gap-4">\
+                        <div>\
+                            <label class="block text-xs font-medium text-gray-400 uppercase mb-2">First Name</label>\
+                            <input type="text" name="First Name" required class="w-full px-4 py-3 rounded-xl bg-gray-50 border border-gray-100 focus:outline-none text-sm">\
+                        </div>\
+                        <div>\
+                            <label class="block text-xs font-medium text-gray-400 uppercase mb-2">Last Name</label>\
+                            <input type="text" name="Last Name" required class="w-full px-4 py-3 rounded-xl bg-gray-50 border border-gray-100 focus:outline-none text-sm">\
+                        </div>\
+                    </div>\
+                    <div>\
+                        <label class="block text-xs font-medium text-gray-400 uppercase mb-2">Your Email</label>\
+                        <input type="email" name="Email" required class="w-full px-4 py-3 rounded-xl bg-gray-50 border border-gray-100 focus:outline-none text-sm">\
+                    </div>\
+                    <div class="grid grid-cols-2 gap-4">\
+                        <div>\
+                            <label class="block text-xs font-medium text-gray-400 uppercase mb-2">Class Name</label>\
+                            <input type="text" name="Class Name" required class="w-full px-4 py-3 rounded-xl bg-gray-50 border border-gray-100 focus:outline-none text-sm">\
+                        </div>\
+                        <div>\
+                            <label class="block text-xs font-medium text-gray-400 uppercase mb-2">Teacher Name</label>\
+                            <input type="text" name="Teacher Name" required class="w-full px-4 py-3 rounded-xl bg-gray-50 border border-gray-100 focus:outline-none text-sm">\
+                        </div>\
+                    </div>\
+                    <div class="grid grid-cols-2 gap-4">\
+                        <div>\
+                            <label class="block text-xs font-medium text-gray-400 uppercase mb-2">Subject</label>\
+                            <input type="text" name="Subject" required class="w-full px-4 py-3 rounded-xl bg-gray-50 border border-gray-100 focus:outline-none text-sm">\
+                        </div>\
+                        <div>\
+                            <label class="block text-xs font-medium text-gray-400 uppercase mb-2">Class Floor</label>\
+                            <input type="text" name="Floor Number" required class="w-full px-4 py-3 rounded-xl bg-gray-50 border border-gray-100 focus:outline-none text-sm">\
+                        </div>\
+                    </div>\
+                    <div>\
+                        <label class="block text-xs font-medium text-gray-400 uppercase mb-2">Assignment Description</label>\
+                        <textarea name="Description" rows="4" required class="w-full px-4 py-3 rounded-xl bg-gray-50 border border-gray-100 focus:outline-none text-sm resize-none"></textarea>\
+                    </div>\
+                    <button type="submit" id="submit-btn" class="w-full py-4 bg-black text-white rounded-xl font-medium soft-shadow hover:bg-gray-900 transition-all">\
+                        Submit Request\
+                    </button>\
+                </form>\
+            </div>\
+        </div>\
+    </main>\
+\
+    <script>\
+        function showPage(id) \{\
+            document.querySelectorAll('.page-view').forEach(p => p.classList.remove('active-view'));\
+            document.getElementById(id).classList.add('active-view');\
+            // Hide status immediately if user navigates away\
+            document.getElementById('form-status').classList.add('hidden');\
+            window.scrollTo(0, 0);\
+        \}\
+\
+        function closeAnnouncement() \{\
+            document.getElementById('announcement-modal').style.display = 'none';\
+        \}\
+\
+        // Form Submission logic\
+        const form = document.getElementById("reviz-form");\
+        const status = document.getElementById("form-status");\
+        const btn = document.getElementById("submit-btn");\
+\
+        form.addEventListener("submit", async function(event) \{\
+            event.preventDefault();\
+            btn.disabled = true;\
+            btn.innerText = "Sending...";\
+            const data = new FormData(event.target);\
+            fetch(event.target.action, \{\
+                method: form.method,\
+                body: data,\
+                headers: \{ 'Accept': 'application/json' \}\
+            \}).then(response => \{\
+                if (response.ok) \{\
+                    status.classList.remove("hidden");\
+                    form.reset();\
+                    btn.innerText = "Submit Request";\
+                    btn.disabled = false;\
+\
+                    // Automatically hide the success message after 5 seconds\
+                    setTimeout(() => \{\
+                        status.classList.add("hidden");\
+                    \}, 5000);\
+                    \
+                \} else \{\
+                    alert("Oops! There was a problem submitting your form");\
+                    btn.disabled = false;\
+                    btn.innerText = "Submit Request";\
+                \}\
+            \});\
+        \});\
+\
+        // Music setup\
+        var tag = document.createElement('script');\
+        tag.src = "https://www.youtube.com/iframe_api";\
+        var firstScriptTag = document.getElementsByTagName('script')[0];\
+        firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);\
+\
+        var player;\
+        function onYouTubeIframeAPIReady() \{\
+            player = new YT.Player('player', \{\
+                height: '0', width: '0',\
+                videoId: 'JlDBqvc7Mw0',\
+                playerVars: \{ 'autoplay': 1, 'loop': 1, 'playlist': 'JlDBqvc7Mw0', 'controls': 0, 'modestbranding': 1 \},\
+                events: \{ 'onReady': onPlayerReady \}\
+            \});\
+        \}\
+        function onPlayerReady(event) \{\}\
+        document.body.addEventListener('click', function() \{\
+            if (player && player.playVideo) \{\
+                player.playVideo();\
+                player.setVolume(40);\
+            \}\
+        \}, \{ once: true \});\
+    </script>\
+</body>\
+</html>}
